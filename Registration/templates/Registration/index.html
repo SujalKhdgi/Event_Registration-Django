@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="F:\project\Event Registration\Antaragni_Registration\Registration\templates\style\fristpage.css">
+    <link rel="stylesheet" href="{% static 'Registration/css/fristpage.css' %}">
 </head>
 <header>
     <div id="header" class="top">
@@ -37,7 +38,7 @@
             </p>
         </div>
         <div>
-            <button class="outline-btn">Register Now</button>
+            <a href="{% url 'select_event_type' %}"><button class="outline-btn">Register Now</button></a>
         </div>
 
     </div>
