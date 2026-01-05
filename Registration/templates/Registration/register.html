@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load static %}
+
+    <h2>Register for {{ event.name }}</h2>
+
+    <p><strong>Date:</strong> {{ event.event_date }} | <strong>Venue:</strong> {{ event.venue }}</p>
+
+    {% if error %}
+    <p style="color:red">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="roll_no" placeholder="Roll No" required><br>
+        <input type="text" name="full_name" placeholder="Full Name" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="text" name="phone" placeholder="Phone" required><br>
+
+        {% if event.is_group_event %}
+            <h4>Team Members</h4>
+            <div id="team-members" data-min="{{ event.min_team_size }}" data-max="{{ event.max_team_size }}">
+                <div>
+                    <input type="text" name="team_members[]" placeholder="Member Name" required>
+                    <button type="button" class="remove-btn">Remove</button>
+                </div>
+            </div>
+            <button id="add-member-btn" type="button">+ Add Member</button>
+            <p>Team size: {{ event.min_team_size }} - {{ event.max_team_size }}</p>
+        {% endif %}
+
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Link external JS -->
+    <script src="{% static 'Registration/registration.js' %}"></script>
+
+
+
+</body>
+</html>

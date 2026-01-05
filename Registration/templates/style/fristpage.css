@@ -1,0 +1,119 @@
+body{
+    min-height: 100vh;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    align-items: center;
+    text-align: center;
+
+}
+header{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+}
+
+.menu{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu span{
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+.nav-links{
+    background-color: transparent;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    font-size: 1.1rem;
+    position: sticky;
+}
+#header a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500 ;
+    font-family:Bahnschrift Light;
+
+}
+p{
+    margin: 0;
+}
+
+#box1{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: min(90vw, 600px);
+    background-color: transparent;
+    aspect-ratio: 16/9;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    gap: 20px;
+}
+#Logo p{
+    font-size: 4rem;
+}
+
+@media(orientation: portrait) {
+    #box1{
+        display: flex;
+        flex-direction: column;
+        width: min(90vw, 350px);
+        background-color: transparent;
+        aspect-ratio: 9/16;
+
+    }
+    .nav-links{
+        display: none;   
+    }
+
+    .menu{
+        display: flex;  
+    }
+
+    .top{
+        justify-content:flex-start;
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+}
+.outline-btn{
+    all: unset;
+    display: inline-block; 
+    margin-top: 40px;
+    border: 2px solid;
+    color: white;
+    background-color: transparent;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor: pointer;
+    text-align: center;
+    transition: 
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+
+}
+.outline-btn:hover{
+    background-color: rgba(255,255,255,0.15);
+}
+
+.outline-btn:active{
+    transform: scale(0.97);
+}
+
+
